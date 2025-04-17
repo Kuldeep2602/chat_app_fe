@@ -28,7 +28,7 @@ function App() {
   const chatInputRef = useRef<HTMLInputElement>(null);
 
   const handleJoinRoom = (roomId: string, usernameProp: string, isCreate: boolean) => {
-    const ws = new WebSocket("ws://localhost:8080");
+    const ws = new WebSocket(import.meta.env.VITE_WS_URL);
 
     ws.onopen = () => {
       wsRef.current = ws;
